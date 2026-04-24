@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Inventory System</title>
+
+<style>
+   body {
+        margin: 0;
+        font-family: 'Segoe UI', sans-serif;
+        background-image: url('wow.jpg');
+        display: flex;
+    }
+
+/* Sidebar Title */
+.sidebar h1 {
+    color: rgb(230, 172, 178);
+    background-color: rgb(185, 67, 102);
+    transition: background 0.3s, opacity 0.3s;
+    border-radius: 8px;
+    padding: 8px;
+    text-align: center;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 220px;
+    background-image: url('hp.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    
+    padding: 20px;
+    box-shadow: #f109a8 0px 4px 12px;
+    position: fixed;
+}
+
+.sidebar h2 {
+    margin-bottom: 30px;
+}
+
+.sidebar a {
+    display: block;
+    color: rgb(175, 0, 53);
+    text-decoration: none;
+    margin: 15px 0;
+    opacity: 0.9;
+    font-weight: bold;
+    padding: 8px;
+    border-radius: 8px;
+    transition: background 0.3s, opacity 0.3s;
+    box-shadow: #f109a8 0px 4px 12px;
+    background-color: rgb(236, 119, 164);
+}
+
+.sidebar a:hover {
+    opacity: 1;
+    background: rgba(0,0,0,0.3);
+}
+
+    /* Main Content */
+    .main {
+        flex: 1;
+        padding: 20px 40px;
+    }
+
+    .header {
+        background: #e19dbd;
+        padding: 25px;
+        border-radius: 15px;
+        margin-bottom: 30px;
+    }
+
+    .cards {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
+    .card {
+        flex: 1;
+        min-width: 180px;
+        padding: 20px;
+        border-radius: 12px;
+        color: white;
+        font-weight: bold;
+    }
+
+    .blue { background: #d51367; }
+    .green { background: #e03c8b; }
+    .orange { background: #e187a5; }
+    .purple { background: #e03c8b; }
+    .red { background: #d51367; }
+
+    .table-section {
+        margin-top: 30px;
+        background: white;
+        padding: 20px;
+        border-radius: 12px;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    th, td {
+        padding: 10px;
+        text-align: left;
+    }
+
+    th {
+        background: #eee;
+    }
+</style>
+</head>
+
+<body>
+
+<!-- Sidebar hyperlinks -->
+<div class="sidebar">
+   <h1>Inventory</h1>
+    <div class="logo">
+        <img src="logo.png" alt="Logo" style="width: 100%; border-radius: 8px; margin-bottom: 20px;">
+    </div>
+    <a href="dashboard.html">Dashboard</a>
+    <a href="product.html">Product</a>
+    <a href="order.html">Order</a>
+    <a href="supplier.html">Supplier</a>
+    <a href="profile.html">Profile</a>
+</div>
+
+
+
+</div>
+
+</body>
+</html>
+
+<script>
+function showSection(sectionId) {
+    let sections = document.querySelectorAll('.section');
+    sections.forEach(section => {
+        section.classList.remove('active');
+    });
+
+    document.getElementById(sectionId).classList.add('active');
+}
+</script>
+

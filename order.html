@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Orders</title>
+<style>
+   * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+   }
+   
+   body {
+        margin: 0;
+        font-family: 'Segoe UI', sans-serif;
+        background-image: url('wow.jpg');
+        display: flex;
+        min-height: 100vh;
+    }
+
+    /* Sidebar Title */
+    .sidebar h1 {
+        color: rgb(230, 172, 178);
+        background-color: rgb(185, 67, 102);
+        transition: background 0.3s, opacity 0.3s;
+        border-radius: 8px;
+        padding: 8px;
+        text-align: center;
+    }
+
+    /* Sidebar */
+    .sidebar {
+       width: 220px;
+    background-image: url('hp.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    height: 100vh;
+    padding: 20px;
+    box-shadow: #f109a8 0px 4px 12px;
+    position: sticky;
+    top: 0;
+    }
+
+    .sidebar h2 {
+        margin-bottom: 30px;
+    }
+
+    .sidebar a {
+        display: block;
+        color: rgb(175, 0, 53);
+        text-decoration: none;
+        margin: 15px 0;
+        opacity: 0.9;
+        font-weight: bold;
+        padding: 8px;
+        border-radius: 8px;
+        transition: background 0.3s, opacity 0.3s;
+        box-shadow: #f109a8 0px 4px 12px;
+        background-color: rgb(236, 119, 164);
+    }
+
+    .sidebar a:hover {
+        opacity: 1;
+        background: rgba(0,0,0,0.3);
+    }
+
+    /* Main Content - Centered */
+    .main-content {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        
+        padding: 40px;
+    }
+    
+    .content-wrapper {
+        width: 100%;
+        max-width: 1000px;
+        background: white;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+
+    .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        padding: 40px;
+        background: rgb(255, 219, 254);
+        border-bottom: 1px solid #c37979;
+        border-radius: 20px;
+        margin-bottom: 1rem;
+    }
+
+    .title {
+        line-height: 1.2;
+    }
+
+    .title small {
+        display: block;
+        color: #888;
+        font-size: 14px;
+    }
+
+    .title h1 {
+        margin: 0;
+        font-size: 26px;
+        color: #bb3568;
+        font-weight: bold;
+    }
+
+    .search-box {
+        display: flex;
+        align-items: center;
+        background: #f1f2f6;
+        padding: 10px 15px;
+        border-radius: 25px;
+        width: 250px;
+    }
+
+    .search-box input {
+        border: none;
+        outline: none;
+        background: transparent;
+        margin-left: 10px;
+        width: 100%;
+        font-size: 14px;
+    }
+
+    .search-icon {
+        font-size: 16px;
+        color: #888;
+    }
+    
+    .section-title {
+        margin-bottom: 15px;
+        color: #333;
+    }
+
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    th, td {
+        padding: 10px;
+        text-align: left;
+    }
+
+    th {
+        background: #eee;
+    }
+    
+    tr:nth-child(even) {
+        background: #f9f9f9;
+    }
+</style>
+</head>
+
+<body>
+
+<!-- Sidebar -->
+<div class="sidebar">
+   <h1>Inventory</h1>
+    
+    <a href="dashboard.html">Dashboard</a>
+    <a href="product.html">Product</a>
+    <a href="order.html">Order</a>
+    <a href="supplier.html">Supplier</a>
+    <a href="profile.html">Profile</a>
+</div>
+
+<!-- Main Content - Centered -->
+<div class="main-content">
+    <div class="content-wrapper">
+        <div class="header">
+            <div class="title">
+                <h1>Orders</h1>
+            </div>
+
+            <div class="search-box">
+                <span class="search-icon">🔍</span>
+                <input type="text" placeholder="Search">
+            </div>
+        </div>
+        
+        <h3 class="section-title">Recent Products</h3>
+        <table>
+            <tr>
+                <th>Product</th>
+                <th>Stock</th>
+                <th>Status</th>
+                <th>Date</th>
+            </tr>
+            <tr>
+                <td>Shirt</td>
+                <td>399</td>
+                <td>In Stock</td>
+                <td>2023-10-01</td>
+            </tr>
+            <tr>
+                <td>Pants</td>
+                <td>67</td>
+                <td>Low Stock</td>
+                <td>2023-10-02</td>
+            </tr>
+            <tr>
+                <td>Shorts</td>
+                <td>269</td>
+                <td>In Stock</td>
+                <td>2023-10-03</td>
+            </tr>
+            <tr>
+                <td>Dress</td>
+                <td>800</td>
+                <td>Low Stock</td>
+                <td>2023-10-04</td>
+            </tr>
+            <tr>
+                <td>Underwear</td>
+                <td>100000</td>
+                <td>In Stock</td>
+                <td>2023-10-05</td>
+            </tr>
+            <tr>
+                <td>Skirt</td>
+                <td>2</td>
+                <td>Low Stock</td>
+                <td>2023-10-06</td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+</body>
+</html>

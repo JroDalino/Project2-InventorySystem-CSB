@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Suppliers</title>
+
+<style>
+   body {
+        margin: 0;
+        font-family: 'Segoe UI', sans-serif;
+        background-image: url('wow.jpg');
+        display: flex;
+    }
+
+/* Sidebar Title */
+.sidebar h1 {
+    color: rgb(230, 172, 178);
+    background-color: rgb(185, 67, 102);
+    transition: background 0.3s, opacity 0.3s;
+    border-radius: 8px;
+    padding: 8px;
+    text-align: center;
+}
+.sidebar {
+   width: 220px;
+    background-image: url('hp.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    height: 100vh;
+    padding: 20px;
+    box-shadow: #f109a8 0px 4px 12px;
+    position: sticky;
+    top: 0;
+}
+
+
+.sidebar h2 {
+    margin-bottom: 30px;
+}
+
+.sidebar a {
+    display: block;
+    color: rgb(175, 0, 53);
+    text-decoration: none;
+    margin: 15px 0;
+    opacity: 0.9;
+    font-weight: bold;
+    padding: 8px;
+    border-radius: 8px;
+    transition: background 0.3s, opacity 0.3s;
+    box-shadow: #f109a8 0px 4px 12px;
+    background-color: rgb(236, 119, 164);
+}
+
+.sidebar a:hover {
+    opacity: 1;
+    background: rgba(0,0,0,0.3);
+}
+
+    /* Main Content */
+ .container {
+            width: 1150px;
+            margin: 0 auto;
+        }
+
+        /* Header Section */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+        }
+
+        h2 {
+            color: #ab5757;
+            font-size: 28px;
+            font-weight: 600;
+            font-style: oblique;
+            font-weight: bold;
+            border: 2px solid #f7eded;
+            border-radius: 20px;
+            border-width: 15px;
+            background-color: #f7eded;
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+
+        /* Search Bar */
+        .search-container {
+            display: flex;
+            align-items: center;
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 10px;
+            padding: 10px 16px;
+            width: 280px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        .search-container:focus-within {
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+        }
+
+        .search-icon {
+            color: #9ca3af;
+            margin-right: 10px;
+            font-size: 16px;
+        }
+
+        .search-container input {
+            border: none;
+            outline: none;
+            flex: 1;
+            font-size: 14px;
+            color: #374151;
+        }
+
+        .search-container input::placeholder {
+            color: #9ca3af;
+        }
+
+        /* Add Button */
+        .btn-add {
+            background: #10b981;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 10px;
+            border: none;
+            font-size: 14px;
+            font-weight: 500;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: background 0.2s, transform 0.1s;
+        }
+
+        .btn-add:hover {
+            background: #059669;
+        }
+
+        .btn-add:active {
+            transform: scale(0.98);
+        }
+
+        /* Table Container */
+        .table-wrapper {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            overflow: hidden;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        /* Table Header */
+        th {
+            background: #c9265f;
+            color: white;
+            padding: 16px 20px;
+            text-align: left;
+            font-weight: 500;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Table Body */
+        td {
+            padding: 16px 20px;
+            border-bottom: 1px solid #f3f4f6;
+            color: #4b5563;
+            font-size: 14px;
+        }
+
+        tr:hover {
+            background: #f9fafb;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* Status Badges */
+        .status {
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        .status-active {
+            background: #d1fae5;
+            color: #065f46;
+        }
+
+        .status-inactive {
+            background: #f3f4f6;
+            color: #6b7280;
+        }
+
+        /* Action Buttons */
+        .actions {
+            display: flex;
+            gap: 8px;
+        }
+
+        .btn {
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 500;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .btn-edit {
+            background: #3b82f6;
+            color: white;
+        }
+
+        .btn-edit:hover {
+            background: #2563eb;
+        }
+
+        .btn-delete {
+            background: #ef4444;
+            color: white;
+        }
+
+        .btn-delete:hover {
+            background: #dc2626;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            body {
+                padding: 20px;
+            }
+
+            .header {
+                flex-direction: column;
+                gap: 16px;
+                align-items: stretch;
+            }
+
+            .header-actions {
+                flex-direction: column;
+            }
+
+            .search-container {
+                width: 100%;
+            }
+
+            table {
+                font-size: 12px;
+            }
+
+            th, td {
+                padding: 12px;
+            }
+        }
+</style>
+</head>
+
+<body>
+
+<!-- Sidebar -->
+<div class="sidebar">
+   <h1>Inventory</h1>
+    
+    <a href="dashboard.html">Dashboard</a>
+    <a href="product.html">Product</a>
+    <a href="order.html">Order</a>
+    <a href="supplier.html">Supplier</a>
+    <a href="profile.html">Profile</a>
+</div>
+
+<!-- Main Content -->
+ <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h2>Supplier List</h2>
+            <div class="header-actions">
+                <div class="search-container">
+                    <span class="search-icon">🔍</span>
+                    <input type="text" placeholder="Search supplier..." />
+                </div>
+                <button class="btn-add">
+                    <span>+</span>
+                    Add Supplier
+                </button>
+            </div>
+        </div>
+
+        <!-- Table -->
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Supplier Name</th>
+                        <th>Contact</th>
+                        <th>Email</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>ABC Supplies</td>
+                        <td>09123456789</td>
+                        <td>abc@email.com</td>
+                        <td><span class="status status-active">Active</span></td>
+                        <td>
+                            <div class="actions">
+                                <button class="btn btn-edit">Edit</button>
+                                <button class="btn btn-delete">Delete</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>XYZ Trading</td>
+                        <td>09987654321</td>
+                        <td>xyz@email.com</td>
+                        <td><span class="status status-inactive">Inactive</span></td>
+                        <td>
+                            <div class="actions">
+                                <button class="btn btn-edit">Edit</button>
+                                <button class="btn btn-delete">Delete</button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Global Goods</td>
+                        <td>09112223344</td>
+                        <td>global@email.com</td>
+                        <td><span class="status status-active">Active</span></td>
+                        <td>
+                            <div class="actions">
+                                <button class="btn btn-edit">Edit</button>
+                                <button class="btn btn-delete">Delete</button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Products</title>
+
+<style>
+    .header {
+        background: #e19dbd;
+        padding: 25px;
+        border-radius: 15px;
+        margin-bottom: 30px;
+    }
+/* Body */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-image: url('wow.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+}
+
+/* Sidebar Title */
+.sidebar h1 {
+    color: rgb(230, 172, 178);
+    background-color: rgb(185, 67, 102);
+    border-radius: 8px;
+    padding: 8px;
+    text-align: center;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 220px;
+    background-image: url('hp.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    height: 100vh;
+    padding: 20px;
+    box-shadow: #f109a8 0px 4px 12px;
+    position: sticky;
+    top: 0;
+}
+
+/* Sidebar Links */
+.sidebar a {
+    display: block;
+    color: rgb(175, 0, 53);
+    text-decoration: none;
+    margin: 15px 0;
+    opacity: 0.9;
+    font-weight: bold;
+    padding: 8px;
+    border-radius: 8px;
+    transition: background 0.3s, opacity 0.3s;
+    box-shadow: #f109a8 0px 4px 12px;
+    background-color: rgb(236, 119, 164);
+}
+
+.sidebar a:hover {
+    opacity: 1;
+    background: rgba(0,0,0,0.3);
+}
+
+/* MAIN FIX */
+ .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 40px;
+        background: rgb(255, 219, 254);
+        border-bottom: 1px solid #c37979;
+        border-radius: 20px;
+        margin-bottom: 1rem;
+    }
+
+    .title {
+        line-height: 1.2;
+    }
+
+    .title small {
+        display: block;
+        color: #888;
+        font-size: 14px;
+    }
+
+    .title h1 {
+        margin: 0;
+        font-size: 24px;
+        color: #d12061;
+        font-weight: bold;
+    }
+
+    .search-box {
+         display: flex;
+            align-items: center;
+            background: white;
+            border: 1px solid #e5e7eb;
+            border-radius: 10px;
+            padding: 10px 16px;
+            width: 1000px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+            transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .search-box input {
+        border: none;
+        outline: none;
+        background: transparent;
+        margin-left: 10px;
+        width: 100%;
+        font-size: 14px;
+       
+    }
+
+    .search-icon {
+        font-size: 16px;
+        color: #888;
+    }
+.main {
+    flex: 1;
+    padding: 20px;
+    width: 1150px;
+}
+
+/* Grid Layout */
+.container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+/* Card */
+.card {
+    background: #f8dddd;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    position: relative;
+}
+
+/* Discount */
+.discount {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: #ff4d6d;
+    font-weight: bold;
+}
+
+/* Image */
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+/* Actions */
+.actions {
+    display: flex;
+    background: #ff4d8d;
+    color: white;
+}
+
+.actions div {
+    flex: 1;
+    text-align: center;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.actions div:hover {
+    background: #e8437a;
+}
+
+/* Info */
+.info {
+    padding: 10px;
+}
+
+.info h4 {
+    margin: 10px 0;
+}
+
+.price {
+    color: gray;
+}
+
+.price span {
+    text-decoration: line-through;
+    margin-left: 5px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- Sidebar -->
+<div class="sidebar">
+   <h1>Inventory</h1>
+    
+    <a href="dashboard.html">Dashboard</a>
+    <a href="product.html">Product</a>
+    <a href="order.html">Order</a>
+    <a href="supplier.html">Supplier</a>
+    <a href="profile.html">Profile</a>
+</div>
+
+<!-- Main Content -->
+<div class="main">
+     <div class="header">
+    <div class="title">
+        <h1>Shop</h1>
+    </div>
+
+    <div class="search-box">
+            <span class="search-icon">🔍</span >
+        <input type="text" placeholder="Search">
+    </div>
+</div>
+  <div class="container">
+    <!-- Card 1 -->
+    <div class="card">
+        <div class="discount">-20%</div>
+        <img src="flower1.jpg">
+        <div class="actions">
+            <div>❤</div>
+            <div>Add To Cart</div>
+            <div>↗</div>
+        </div>
+        <div class="info">
+            <h4>Flower Pot</h4>
+            <div class="price">$12.99 <span>$15.99</span></div>
+        </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="card">
+        <div class="discount">-17%</div>
+        <img src="flower2.jpg">
+        <div class="actions">
+            <div>❤</div>
+            <div>Add To Cart</div>
+            <div>↗</div>
+        </div>
+        <div class="info">
+            <h4>Flower Pot</h4>
+            <div class="price">$12.99 <span>$15.99</span></div>
+        </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="card">
+        <div class="discount">-3%</div>
+        <img src="flower3.jpg">
+        <div class="actions">
+            <div>❤</div>
+            <div>Add To Cart</div>
+            <div>↗</div>
+        </div>
+        <div class="info">
+            <h4>Flower Pot</h4>
+            <div class="price">$12.99 <span>$15.99</span></div>
+        </div>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="card">
+        <div class="discount">-18%</div>
+        <img src="flower4.jpg">
+        <div class="actions">
+            <div>❤</div>
+            <div>Add To Cart</div>
+            <div>↗</div>
+        </div>
+        <div class="info">
+            <h4>Flower Pot</h4>
+            <div class="price">$12.99 <span>$15.99</span></div>
+        </div>
+    </div>
+
+    <!-- Card 5 -->
+    <div class="card">
+        <div class="discount">-10%</div>
+        <img src="flower5.jpg">
+        <div class="actions">
+            <div>❤</div>
+            <div>Add To Cart</div>
+            <div>↗</div>
+        </div>
+        <div class="info">
+            <h4>Flower Pot</h4>
+            <div class="price">$12.99 <span>$15.99</span></div>
+        </div>
+    </div>
+
+    <!-- Card 6 -->
+    <div class="card">
+        <div class="discount">-5%</div>
+        <img src="flower6.jpg">
+        <div class="actions">
+            <div>❤</div>
+            <div>Add To Cart</div>
+            <div>↗</div>
+        </div>
+        <div class="info">
+            <h4>Flower Pot</h4>
+            <div class="price">$12.99 <span>$15.99</span></div>
+        </div>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>
